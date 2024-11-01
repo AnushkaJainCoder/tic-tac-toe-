@@ -7,30 +7,39 @@ function App() {
   return (
     <>
       <div className="board-row">
-        <Square value = {1}/>
+      <Square />
+      <Square />
+      <Square />
+        
         {/* <button className='square'>
           1
         </button> */}
-         <Square value = {2}/>
-         <Square value = {3}/>
+         {/* <Square value = {2}/>
+         <Square value = {3}/> */}
         
       </div>
       <div className="board-row">
-        <Square value = {4}/>
+      <Square />
+      <Square />
+      <Square />
+        
         {/* <button className='square'>
           1
         </button> */}
-         <Square value = {5}/>
-         <Square value = {6}/>
+         {/* <Square value = {2}/>
+         <Square value = {3}/> */}
         
       </div>
       <div className="board-row">
-        <Square value = {7}/>
+      <Square />
+      <Square />
+      <Square />
+        
         {/* <button className='square'>
           1
         </button> */}
-         <Square value = {8}/>
-         <Square value = {9}/>
+         {/* <Square value = {2}/>
+         <Square value = {3}/> */}
         
       </div>
     </>
