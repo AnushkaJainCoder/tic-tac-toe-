@@ -5,7 +5,7 @@ import Square from './Square';
 
 
 function App() {
-  const [xIsNext, setXIsNext] = useState(true);
+  const [isX, setX] = useState(true);
   const [square, setSquare] = useState(Array(9).fill(null));
 
   function onhandleClick(i){
@@ -13,7 +13,7 @@ function App() {
       return;
     }
     const nextSquares = square.slice();
-    if(xIsNext){
+    if(isX){
       nextSquares[i] = 'X';
     }
     else{
@@ -21,7 +21,7 @@ function App() {
     }
     // nextSquares[i] = 'X';
     setSquare(nextSquares);
-    setXIsNext(!xIsNext);
+    setX(!isX);
     
   }
   return (
