@@ -2,14 +2,26 @@
 import { useState } from 'react';
 import './App.css';
 import Square from './Square';
+import DecideWinner from './DecideWinner';
+//  from './DecideWinner';
 
 
 function App() {
+  
   const [isX, setX] = useState(true);
   const [square, setSquare] = useState(Array(9).fill(null));
+  const winner = DecideWinner(square);
+  let status;
+
+  if(winner){
+    status = "Congratulation, Winner is " + winner;
+  }
+  else{
+    status = "Next Player is " + (isX ? 'X' : 'O')
+  }
 
   function onhandleClick(i){
-    if(square[i]){
+    if(square[i] || DecideWinner(square)){
       return;
     }
     const nextSquares = square.slice();
@@ -54,6 +66,9 @@ function App() {
          {/* <Square value = {2}/>
          <Square value = {3}/> */}
         
+      </div>
+      <div className='status'>
+          {status}
       </div>
     </>
     
