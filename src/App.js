@@ -5,12 +5,24 @@ import Square from './Square';
 
 
 function App() {
+  const [xIsNext, setXIsNext] = useState(true);
   const [square, setSquare] = useState(Array(9).fill(null));
 
   function onhandleClick(i){
+    if(square[i]){
+      return;
+    }
     const nextSquares = square.slice();
-    nextSquares[i] = 'X';
+    if(xIsNext){
+      nextSquares[i] = 'X';
+    }
+    else{
+      nextSquares[i] = 'O';
+    }
+    // nextSquares[i] = 'X';
     setSquare(nextSquares);
+    setXIsNext(!xIsNext);
+    
   }
   return (
     <>
